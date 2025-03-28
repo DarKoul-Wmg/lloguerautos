@@ -11,3 +11,10 @@ class AutomobilAdmin(admin.ModelAdmin):
     search_fields = ('matricula', 'marca', 'model')
 
 admin.site.register(Automobil, AutomobilAdmin)
+
+class ReservaAdmin(admin.ModelAdmin):
+    list_display = ('user', 'automobil', 'data_inicio', 'data_fi')
+    search_fields = ('user__username', 'automobil__matricula')
+    list_filter = ('data_inicio', 'data_fi')
+
+admin.site.register(Reserva, ReservaAdmin)
