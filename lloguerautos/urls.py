@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from lloguer.views import lista_autos
+from lloguer.views import lista_autos, crear_reserva
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("lloguer/autos/", lista_autos, name="lista_autos"),
+    path('lloguer/reserva/', crear_reserva, name='crear_reserva'),
 ]
 
